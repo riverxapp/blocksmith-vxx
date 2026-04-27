@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RiverX App</title>
+    <!-- Added simple client-side navigation fallback -->
+    <script>
+      // Basic client-side navigation fallback for menu and reservation pages
+      document.addEventListener('DOMContentLoaded', () => {
+        if (!document.getElementById('root')) return;
+
+        // Override 404 fallback by redirecting to root if invalid path
+        const validPaths = ['/', '/menu', '/reservation'];
+        if (!validPaths.includes(window.location.pathname)) {
+          window.history.replaceState({}, '', '/');
+        }
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
