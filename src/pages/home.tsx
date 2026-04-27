@@ -14,10 +14,10 @@ export function Home() {
         </p>
         <div className="flex justify-center gap-6">
           <Button asChild size="lg" className="bg-[#bc4a1e] text-white hover:bg-[#8f3b16]">
-            <Link to="#menu">View Menu</Link>
+            <Link to="/menu">View Menu</Link>
           </Button>
           <Button asChild variant="outline" size="lg" className="border-[#bc4a1e] text-[#bc4a1e] hover:bg-[#f7e6d9]">
-            <Link to="#contact">Reserve a Table</Link>
+            <Link to="/features">Reserve a Table</Link>
           </Button>
         </div>
       </section>
@@ -89,7 +89,7 @@ export function Home() {
         </address>
         <div className="flex justify-center">
           <Button asChild size="lg" className="bg-[#bc4a1e] text-white hover:bg-[#8f3b16]">
-            <Link to="/reservation">Make a Reservation</Link>
+            <Link to="/features">Make a Reservation</Link>
           </Button>
         </div>
       </section>
