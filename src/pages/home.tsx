@@ -19,6 +19,9 @@ export function Home() {
           <Button asChild variant="outline" size="lg" className="border-[#bc4a1e] text-[#bc4a1e] hover:bg-[#f7e6d9]">
             <Link to="/reservation">Reserve a Table</Link>
           </Button>
+          <Button asChild variant="outline" size="lg" className="border-[#6b7280] text-[#374151] hover:bg-[#e5e7eb]">
+            <Link to="/new">New Page</Link>
+          </Button>
         </div>
       </section>
 
