@@ -18,6 +18,27 @@
         if (!validPaths.includes(window.location.pathname)) {
           window.history.replaceState({}, '', '/');
         }
+
+        // Handle clicks on anchor tags linking to known SPA routes
+        document.body.addEventListener('click', (e) => {
+          const target = e.target;
+          if (target.tagName === 'A') {
+            const href = target.getAttribute('href');
+            if (validPaths.includes(href)) {
+              e.preventDefault();
+              window.history.pushState({}, '', href);
+              window.dispatchEvent(new PopStateEvent('popstate'));
+            }
+          }
+        });
+      });
+
+      // Listen to popstate to notify SPA router of navigation
+      window.addEventListener('popstate', () => {
+        const navigationEvent = new CustomEvent('spa:navigate', {
+          detail: { path: window.location.pathname }
+        });
+        window.dispatchEvent(navigationEvent);
       });
     </script>
   </head>
