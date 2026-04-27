@@ -4,14 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RiverX App</title>
-    <!-- Added simple client-side navigation fallback -->
+    <!-- Added simple client-side navigation fallback for Vite + React SPA -->
     <script>
-      // Basic client-side navigation fallback for menu and reservation pages
+      // This script ensures direct navigation to /menu and /reservation routes works without 404
       document.addEventListener('DOMContentLoaded', () => {
-        if (!document.getElementById('root')) return;
+        const root = document.getElementById('root');
+        if (!root) return;
 
-        // Override 404 fallback by redirecting to root if invalid path
+        // List of known valid SPA paths
         const validPaths = ['/', '/menu', '/reservation'];
+
+        // If current path isn't recognized, fallback to root
         if (!validPaths.includes(window.location.pathname)) {
           window.history.replaceState({}, '', '/');
         }
