@@ -3,7 +3,7 @@ import { Button } from "../components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/card";
 import { Link } from "react-router-dom";
 
-export function NewPage() {
+export function New() {
   return (
     <main className="p-6 max-w-4xl mx-auto space-y-10">
       <section className="text-center">
